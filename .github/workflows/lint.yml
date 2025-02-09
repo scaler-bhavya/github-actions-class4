@@ -1,4 +1,4 @@
-name: Python Code Linting
+name: Python Code Quality Check
 
 on:
   push:
@@ -21,12 +21,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install ruff
+      - name: Install flake8
         run: |
           python -m pip install --upgrade pip
-          pip install ruff
+          pip install flake8
 
-      - name: Run ruff linting
+      - name: Run flake8 linting
         run: |
-          ruff check script.py
+          flake8 script.py
 
+      - name: Check for syntax errors
+        run: |
+          python -m py_compile script.py
