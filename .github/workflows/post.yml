@@ -1,0 +1,21 @@
+name: PostgreSQL Service Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+    steps:
+      - name: Check PostgreSQL Service
+        run: |
+          while ! nc -z localhost 5432; do
+            sleep 1
+          done
+          echo "PostgreSQL is ready"
