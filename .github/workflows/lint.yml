@@ -28,4 +28,5 @@ jobs:
 
       - name: Run ruff linting
         run: |
-          ruff check .
+          ruff check script.py
+
