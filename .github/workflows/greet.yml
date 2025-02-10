@@ -18,9 +18,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.x"
 
-      # Step 3: Run the Python script
+      # Step 3: Run the Python script with GitHub username
       - name: Run Greeting Script
         run: |
-          python script.py "John Doe"
+          python script.py "${{ github.actor }}"
