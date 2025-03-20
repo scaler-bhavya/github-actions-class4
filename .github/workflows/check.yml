@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Greet commenter
-      run: echo "Hello, thanks for commenting!"
+      run: echo "Hello, thanks for commenting!!"
