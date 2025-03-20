@@ -1,4 +1,14 @@
-name: "hello"
+# name: "hello"
+# on:
+#   issue_comment:
+#     types: [created]
+# jobs:
+#   greet:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Greet commenter
+#         run: echo "Hello, thanks for commenting!!"
+
 on:
   issue_comment:
     types: [created]
@@ -6,6 +16,6 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Greet commenter
-        run: echo "Hello, thanks for commenting!!"
+    - name: Greet commenter
+      run: echo "Hello, thanks for commenting!"
 
